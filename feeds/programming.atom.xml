@@ -21,7 +21,7 @@
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;p&gt;Not too long ago, Facebook unveiled
-&lt;a class="reference external" href="https://code.facebook.com/posts/1691455094417024/graphql-a-data-query-language/"&gt;graphql&lt;/a&gt;.
+&lt;a class="reference external" href="https://code.facebook.com/posts/1691455094417024/graphql-a-data-query-language/"&gt;Graphql&lt;/a&gt;.
 This was thought up to be a flexible data access layer designed to work
 as a simple interface on top of heterogeneous data sources. Not long after facebook had introduced it, github announced
 that the latest version of its API (version 4) would indeed be a &lt;a class="reference external" href="https://developer.github.com/v4/"&gt;GraphQL API&lt;/a&gt;.
@@ -34,25 +34,25 @@ on the fly, as they are writing the query.&lt;/p&gt;
 &lt;div class="section" id="getting-started"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Getting Started&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Python's main competitor in the ring is a nifty little library called &lt;a class="reference external" href="http://graphene-python.org/"&gt;graphene&lt;/a&gt;.
-But before we get into graphene, we need to talk about some of the fundamental parts of graphql.&lt;/p&gt;
+But before we get into graphene, we need to talk about some of the fundamental parts of Graphql.&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;The &lt;em&gt;model&lt;/em&gt; is an object defined by a graphql schema.&lt;/li&gt;
+&lt;li&gt;The &lt;em&gt;model&lt;/em&gt; is an object defined by a Graphql schema.&lt;/li&gt;
 &lt;li&gt;The &lt;em&gt;schema&lt;/em&gt; defines models and their attribute.&lt;/li&gt;
 &lt;li&gt;Each attribute of a model has its own &lt;em&gt;resolver&lt;/em&gt;.
 This is a function that is responsible for getting
 the data for that particular model attribute.&lt;/li&gt;
 &lt;li&gt;A &lt;em&gt;query&lt;/em&gt; is basically what you use to get or set
-data inside graphql&lt;/li&gt;
+data inside Graphql&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Mutations&lt;/em&gt; are particular queries that allow you
 to change the data for a given model or a set
 of models.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Graphiql&lt;/em&gt; is the UI that you use to interact with
-a graphql server. The IDE-like thing that you see
+a Graphql server. The IDE-like thing that you see
 in the above screenshot is the Graphiql interface.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="section" id="here-comes-python"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="#id3"&gt;Here Comes Python&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Python's attempt at graphql can be broken down into three parts. Graphene, ORM specific graphene add-ons and
+&lt;p&gt;Python's attempt at Graphql can be broken down into three parts. Graphene, ORM specific graphene add-ons and
 graphene libraries that add support to web frameworks such as flask or django. Graphene allows you to define your
 models, define the attributes in your model, and also parses queries to get the data for those particular models.&lt;/p&gt;
 &lt;p&gt;The ORM specific graphene libraries basically do the job of turning your SQLAlchemy or Django models
@@ -118,7 +118,7 @@ have and finally, &lt;code&gt;invalid&lt;/code&gt; basically tells us that if th
 &lt;/div&gt;
 &lt;div class="section" id="basic-types"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id5"&gt;Basic Types&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;So, now that we've gotten the hang of the fundamental parts of the graphql system, its time that we explored the other
+&lt;p&gt;So, now that we've gotten the hang of the fundamental parts of the Graphql system, its time that we explored the other
 data types, and started playing around with more complex objects. There is already plenty of good documentation on
 this stuff, so I won't do a copy of the tutorials that are already available. The first thing to take a look at is
 the &lt;a class="reference external" href="http://docs.graphene-python.org/en/latest/types/"&gt;type reference&lt;/a&gt;.&lt;/p&gt;
@@ -133,7 +133,7 @@ other objects inherit from in an abstract sense. Pretty much what you'd expect f
 &lt;div class="section" id="a-few-opinions"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="#id6"&gt;A Few Opinions&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;However, what I have come to notice is that it is almost always better to avoid using abstract types, and just go
-straight for interfaces. Most of the time, you just don't need abstract objects. In the case of graphql, composition
+straight for interfaces. Most of the time, you just don't need abstract objects. In the case of Graphql, composition
 is almost always better than inheritance. Probably the only place that it makes sense to use the &lt;code&gt;AbstractType&lt;/code&gt;
 class is for &lt;code&gt;Query&lt;/code&gt; types that you are later on going to use in your final &lt;code&gt;Query&lt;/code&gt; object.&lt;/p&gt;
 &lt;p&gt;Make sure to keep your names simple, and avoid using &lt;code&gt;graphene.NotNull&lt;/code&gt;, because you can always set
@@ -143,7 +143,7 @@ people looking at the codebase can see commonalities between graphene and other 
 &lt;/div&gt;
 &lt;div class="section" id="integration-with-orms"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id7"&gt;Integration with ORMs&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;If you think about it, at its core, graphene is basically a combination of a serialization library and a graphql
+&lt;p&gt;If you think about it, at its core, graphene is basically a combination of a serialization library and a Graphql
 query interpreter, so it would make a lot of sense for it to work with ORMs and it does so quite well. At the time
 of writing this, there is support for django, sqlalchemy as well as google app engine. Most are really quite
 simple to integrate. Most of the time, you just have to set the meta model attribute of an object type and you're done.&lt;/p&gt;
@@ -222,7 +222,7 @@ is still in the works.&lt;/p&gt;
 &lt;div class="section" id="integration-with-web-frameworks"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;Integration with Web Frameworks&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;As you might expect, graphene supports a few popular frameworks, with more support coming. Right now there is awesome
-support for &lt;code&gt;flask&lt;/code&gt; and &lt;code&gt;django&lt;/code&gt;. Here is what a flask graphql application looks like:&lt;/p&gt;
+support for &lt;code&gt;flask&lt;/code&gt; and &lt;code&gt;django&lt;/code&gt;. Here is what a flask Graphql application looks like:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask_graphql&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;GraphQLView&lt;/span&gt;
 
@@ -253,11 +253,11 @@ subclass &lt;code&gt;GraphQLView&lt;/code&gt; if you want to add some custom aut
 &lt;/div&gt;
 &lt;div class="section" id="final-thoughts"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id11"&gt;Final Thoughts&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;I really like graphql, I've recently launched a production application based on top of graphql, and
-&lt;code&gt;graphene-django&lt;/code&gt; has really helped me replace my current REST API with a graphql API (or service or whatever
+&lt;p&gt;I really like Graphql, I've recently launched a production application based on top of Graphql, and
+&lt;code&gt;graphene-django&lt;/code&gt; has really helped me replace my current REST API with a Graphql API (or service or whatever
 it is that you want to call it). The delcarative syntax makes it quite easy to use, and so there really is not much
 of a learning curve, especially if you've used serializer libraries like Marshmallow or DRF's serializers.&lt;/p&gt;
-&lt;p&gt;Currently, graphene is basically a python port of the graphql nodejs package at version 0.6. I'm pretty sure there will
+&lt;p&gt;Currently, graphene is basically a python port of the Graphql nodejs package at version 0.6. I'm pretty sure there will
 be version bumps in the future as the library has a healthy following. It also supports all kinds of clients including
 the apollo client.&lt;/p&gt;
 &lt;hr class="docutils" /&gt;
