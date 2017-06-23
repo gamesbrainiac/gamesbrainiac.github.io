@@ -1,240 +1,37 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>
-            Python 3 May Become Relevant Now | EF
-    </title>
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-            <link rel="stylesheet" href="http://nafiulis.me/theme/css/main.css"/>
-            <link rel="stylesheet" href="http://nafiulis.me/theme/css/pygment.css"/>
-            <script src="http://nafiulis.me/theme/js/jquery.min.js"></script>
-            <script src="http://nafiulis.me/theme/js/main.js"></script>
-</head>
-<body>
+<html> <head lang=en><meta charset=UTF-8><title>Python 3 May Become Relevant Now | EF</title><link href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css rel=stylesheet><link href=http://fonts.googleapis.com/css?family=Inconsolata rel=stylesheet type=text/css><link rel=stylesheet href=http://nafiulis.me/theme/css/main.css><link rel=stylesheet href=http://nafiulis.me/theme/css/pygment.css><script src=http://nafiulis.me/theme/js/jquery.min.js></script><script src=http://nafiulis.me/theme/js/main.js></script></head> <body> <!--Heading at the top saying "Engineering Fantasy"--> <div id=header_top> <div class=title> <a href=http://nafiulis.me><span id=engineering>Engineering</span><span id=fantasy>Fantasy</span></a> </div> </div> <button type=button class="js-menu-trigger sliding-menu-button button-nav"> <img src=https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/menu-white.png alt="Menu Icon"> </button> <!--Navigation Bar--> <nav class="js-menu sliding-menu-content"> <span class=section-header>Pages</span> <ul> <li><a href=http://nafiulis.me>Home</a></li> <li><a href=http://nafiulis.me/tags.html>Tags</a></li> <li><a href=http://nafiulis.me/pages/about-me.html>About Me</a></li> </ul> <span class=section-header>Categories</span> <ul> <li><a href=http://nafiulis.me/category/anime.html>Anime</a></li> <li><a href=http://nafiulis.me/category/education.html>Education</a></li> <li><a href=http://nafiulis.me/category/productivity.html>Productivity</a></li> <li><a href=http://nafiulis.me/category/programming.html>programming</a></li> <li><a href=http://nafiulis.me/category/rants.html>rants</a></li> </ul> </nav> <div class="js-menu-screen menu-screen"></div> <!--Main Container--> <div class=container> <!--Top most menu--> <div id=menu> <div class=left> <a href=http://nafiulis.me/feeds/all.atom.xml><i class="fa fa-rss
+                        icon"></i></a> <a href=https://twitter.com/gamesbrainiac><i class="fa fa-twitter icon"></i></a> </div> <div class=center> <h1 class=message>Nafiul Islam on casting spells with code</h1> </div> <div class=right> <a href=https://github.com/gamesbrainiac><i class="fa fa-github icon"></i></a> <a href=http://stackoverflow.com/users/1624921/games-brainiac><i class="fa fa-stack-overflow icon" style="padding-right: 30px"></i></a> </div> </div> <!--Main blog list container--> <div id=blogroll> <div class=article-container> <h1>Python 3 May Become Relevant Now</h1> <p class=time>Monday, 03 August 2015</p> <div class=article-content> <div class="contents topic" id=table-of-contents> <p class="topic-title first">Table of Contents</p> <ul class=simple> <li><a class="reference internal" href=#type-hints id=id6>Type Hints</a></li> <li><a class="reference internal" href=#async-await id=id7>Async/Await</a></li> <li><a class="reference internal" href=#summary id=id8>Summary</a></li> </ul> </div> <p>Python 3 has been mocked for a pretty long time for not having any <em>big-ticket</em> features. For the first four minor releases for Python 3 (3.1 to 3.4), this did not change. There are two features that are worth noting in Python 3.5. One being the type checker/hints.<a class=footnote-reference href=#typechecker id=id1>[1]</a> The other being the async/await key words coming to Python 3.5.<a class=footnote-reference href=#async id=id2>[2]</a> Question is, how relevant?</p> <div class=section id=type-hints> <h2><a class=toc-backref href=#id6>Type Hints</a></h2> <blockquote> <p>This PEP aims to provide a standard syntax for type annotations, opening up Python code to easier static analysis and refactoring, potential runtime type checking, and performance optimizations utilizing type information.</p> <p><cite>PEP 0484</cite></p> </blockquote> <p>Python now has a type <em>checker</em>. This does not mean that python is going to magically become a <em>statically typed</em> language. In other words, the type checker is merely a tool for a better development experience. For example, if your IDE/Editor knows what type you're working with, it can provide better code completion. Some IDEs actually provide rudimentary type checking.<a class=footnote-reference href=#pycharm id=id3>[3]</a> However, this will standardize the way in which types are declared and that means this will raise the bar for all the python tools available at our disposal.</p> <p>Think of this as the python equivalent to <a class="reference external" href=https://github.com/facebook/flow>flow</a>, which is a static type checker for javascript. The type checking will happen through stub files, a lot like DefinitelyTyped's Typescript stubs.<a class=footnote-reference href=#dt id=id4>[4]</a></p> <p>Other than better tooling, this also means that a type induced runtime errors can be thwarted before they happen, which is something that makes developing large code bases with Python a lot easier. You will hear no end of war stories about how a function that <em>sometimes</em> returned <code>None</code> deep in the source brought about <em>pyapocalypse</em>. Having type problems deep within your source code, is by no means uncommon.</p> <p>A friend of mine had to deal with this kind of problem once. The problem was with a function (buried deep in the source code as one of many decorators) that usually returned a <code>list</code> but under a certain circumstances, it returned <code>None</code>. This wasn't noted before because most of the time, the result would be checked in a simple <code>if</code> statement.</p> <p>In other words <code>bool(None)</code> and <code>bool([])</code> return the same thing, which is <code>False</code>. The problem was happening because <em>another</em> branch still <em>thought</em> that the returned value was a <code>list</code> and so tried to <code>append</code> to it. As you might expect, the traceback wasn't pretty.</p> <p>I'm not saying that the person who originally wrote the code is a bad programmer. I'll leave that up to you. What I am saying is that python allows you to make such silly mistakes. This is especially problematic when you're working with really large code-bases.</p> <p>However, while this is all good in terms of development tools, this does not mean a large boost in performance. PyPy's FAQ talks about this issue and addresses some of the key concerns. <a class=footnote-reference href=#pypyfaq id=id5>[5]</a> In a nutshell, the performance will not increase simply because python's types are objects and do not correspond directly to how types are represented in binary. For example, python's <code>int</code> type isn't necessarily a 64-bit number, but has the ability to grow to whatever size you need it to grow.</p> <blockquote> <p>... annotations are at the wrong level (e.g. a PEP 484 “int” corresponds to Python 3’s int type, which does not necessarily fits inside one machine word; even worse, an “int” annotation allows arbitrary int subclasses).</p> <p><cite>PyPy FAQ (Would type annotations help PyPy’s performance?)</cite></p> </blockquote> </div> <div class=section id=async-await> <h2><a class=toc-backref href=#id7>Async/Await</a></h2> <blockquote> <p>This proposal makes coroutines a native Python language feature, and clearly separates them from generators. This removes generator/coroutine ambiguity, and makes it possible to reliably define coroutines without reliance on a specific library. This also enables linters and IDEs to improve static code analysis and refactoring.</p> <p><cite>PEP 0492</cite></p> </blockquote> <p><code>async</code> and <code>await</code> are very good ideas. In fact, these two keywords have been an integral part of C# for quite some time now and make programing with tasks much easier. These two key words makes python feel a lot more abstract, whereas turning generators into coroutines (even through the use of a decorator) and then using them like generators feels rather clumsy. In simple terms, <code>async</code> creates a coroutine for you. For example, the following is a coroutine:</p> <div class=highlight><pre><span></span><span class=kn>import</span> <span class=nn>asyncio</span>
+<span class=kn>import</span> <span class=nn>datetime</span>
 
-    <!--Heading at the top saying "Engineering Fantasy"-->
-    <div id="header_top">
-        <div class="title">
-            <a href="http://nafiulis.me"><span id="engineering">Engineering</span><span id="fantasy">Fantasy</span></a>
-        </div>
-    </div>
+<span class=nd>@asyncio.coroutine</span>
+<span class=k>def</span> <span class=nf>display_date</span><span class=p>(</span><span class=n>loop</span><span class=p>):</span>
+    <span class=n>end_time</span> <span class=o>=</span> <span class=n>loop</span><span class=o>.</span><span class=n>time</span><span class=p>()</span> <span class=o>+</span> <span class=mf>5.0</span>
+    <span class=k>while</span> <span class=bp>True</span><span class=p>:</span>
+        <span class=k>print</span><span class=p>(</span><span class=n>datetime</span><span class=o>.</span><span class=n>datetime</span><span class=o>.</span><span class=n>now</span><span class=p>())</span>
+        <span class=k>if</span> <span class=p>(</span><span class=n>loop</span><span class=o>.</span><span class=n>time</span><span class=p>()</span> <span class=o>+</span> <span class=mf>1.0</span><span class=p>)</span> <span class=o>&gt;=</span> <span class=n>end_time</span><span class=p>:</span>
+            <span class=k>break</span>
+        <span class=k>yield from</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
 
-    <button type="button" class="js-menu-trigger sliding-menu-button button-nav">
-        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/menu-white.png" alt="Menu Icon">
-    </button>
+<span class=n>loop</span> <span class=o>=</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>get_event_loop</span><span class=p>()</span>
+<span class=c1># Blocking call which returns when the display_date() coroutine is done</span>
+<span class=n>loop</span><span class=o>.</span><span class=n>run_until_complete</span><span class=p>(</span><span class=n>display_date</span><span class=p>(</span><span class=n>loop</span><span class=p>))</span>
+<span class=n>loop</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
+</pre></div> <p>The above will turn into the following under PEP-492:</p> <div class=highlight><pre><span></span><span class=kn>import</span> <span class=nn>asyncio</span>
+<span class=kn>import</span> <span class=nn>datetime</span>
 
+<span class=n>async</span> <span class=k>def</span> <span class=nf>display_date</span><span class=p>(</span><span class=n>loop</span><span class=p>):</span>
+    <span class=n>end_time</span> <span class=o>=</span> <span class=n>loop</span><span class=o>.</span><span class=n>time</span><span class=p>()</span> <span class=o>+</span> <span class=mf>5.0</span>
+    <span class=k>while</span> <span class=bp>True</span><span class=p>:</span>
+        <span class=k>print</span><span class=p>(</span><span class=n>datetime</span><span class=o>.</span><span class=n>datetime</span><span class=o>.</span><span class=n>now</span><span class=p>())</span>
+        <span class=k>if</span> <span class=p>(</span><span class=n>loop</span><span class=o>.</span><span class=n>time</span><span class=p>()</span> <span class=o>+</span> <span class=mf>1.0</span><span class=p>)</span> <span class=o>&gt;=</span> <span class=n>end_time</span><span class=p>:</span>
+            <span class=k>break</span>
+        <span class=n>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
 
-    <!--Navigation Bar-->
-    <nav class="js-menu sliding-menu-content">
-        <span class="section-header">Pages</span>
-        <ul>
-
-            <li><a href="http://nafiulis.me">Home</a></li>
-            <li><a href="http://nafiulis.me/tags.html">Tags</a></li>
-                <li><a href="http://nafiulis.me/pages/about-me.html">About Me</a></li>
-        </ul>
-
-        <span class="section-header">Categories</span>
-        <ul>
-                <li><a href="http://nafiulis.me/category/anime.html">Anime</a></li>
-                <li><a href="http://nafiulis.me/category/education.html">Education</a></li>
-                <li><a href="http://nafiulis.me/category/productivity.html">Productivity</a></li>
-                <li><a href="http://nafiulis.me/category/programming.html">programming</a></li>
-                <li><a href="http://nafiulis.me/category/rants.html">rants</a></li>
-        </ul>
-    </nav>
-    <div class="js-menu-screen menu-screen"></div>
-
-    <!--Main Container-->
-    <div class="container">
-
-        <!--Top most menu-->
-            <div id="menu">
-                    <div class="left">
-                        <a href="http://nafiulis.me/feeds/all.atom.xml"><i class="fa fa-rss
-                        icon"></i></a>
-                        <a href="https://twitter.com/gamesbrainiac"><i class="fa fa-twitter icon"></i></a>
-
-                    </div>
-                    <div class="center">
-                        <h1 class="message">Nafiul Islam on casting spells with code</h1>
-                    </div>
-                    <div class="right">
-                        <a href="https://github.com/gamesbrainiac"><i class="fa fa-github icon"></i></a>
-
-                        <a href="http://stackoverflow.com/users/1624921/games-brainiac"><i class="fa fa-stack-overflow icon"
-                                                                  style="padding-right: 30px"></i></a>
-
-                    </div>
-            </div>
-
-        <!--Main blog list container-->
-        <div id="blogroll">
-    <div class="article-container">
-        <h1>Python 3 May Become Relevant Now</h1>
-        <p class="time">Monday, 03 August 2015</p>
-        <div class="article-content">
-            <div class="contents topic" id="table-of-contents">
-<p class="topic-title first">Table of Contents</p>
-<ul class="simple">
-<li><a class="reference internal" href="#type-hints" id="id6">Type Hints</a></li>
-<li><a class="reference internal" href="#async-await" id="id7">Async/Await</a></li>
-<li><a class="reference internal" href="#summary" id="id8">Summary</a></li>
-</ul>
-</div>
-<p>Python 3 has been mocked for a pretty long time for not having any <em>big-ticket</em> features. For the first four
-minor releases for Python 3 (3.1 to 3.4), this did not change. There are two features that are worth noting
-in Python 3.5. One being the type checker/hints.<a class="footnote-reference" href="#typechecker" id="id1">[1]</a> The other being the async/await key words
-coming to Python 3.5.<a class="footnote-reference" href="#async" id="id2">[2]</a> Question is, how relevant?</p>
-<div class="section" id="type-hints">
-<h2><a class="toc-backref" href="#id6">Type Hints</a></h2>
-<blockquote>
-<p>This PEP aims to provide a standard syntax for type annotations, opening up Python code to easier static analysis
-and refactoring, potential runtime type checking, and performance optimizations utilizing type information.</p>
-<p><cite>PEP 0484</cite></p>
-</blockquote>
-<p>Python now has a type <em>checker</em>. This does not mean that python is going to magically become a
-<em>statically typed</em> language. In other words, the type checker is merely a tool for a better development experience.
-For example, if your IDE/Editor knows what type you're working with, it can provide better code completion. Some
-IDEs actually provide rudimentary type checking.<a class="footnote-reference" href="#pycharm" id="id3">[3]</a> However, this will standardize the way in which
-types are declared and that means this will raise the bar for all the python tools available at our disposal.</p>
-<p>Think of this as the python equivalent to <a class="reference external" href="https://github.com/facebook/flow">flow</a>, which is a static type checker
-for javascript. The type checking will happen through stub files, a lot like DefinitelyTyped's Typescript stubs.<a class="footnote-reference" href="#dt" id="id4">[4]</a></p>
-<p>Other than better tooling, this also means that a type induced runtime errors can be thwarted before they happen, which is
-something that makes developing large code bases with Python a lot easier. You will hear no end of war stories about
-how a function that <em>sometimes</em> returned <code>None</code> deep in the source brought about <em>pyapocalypse</em>. Having type
-problems deep within your source code, is by no means uncommon.</p>
-<p>A friend of mine had to deal with this kind of problem once. The problem was with a function (buried deep in the
-source code as one of many decorators) that usually returned a <code>list</code> but under a certain circumstances, it
-returned <code>None</code>. This wasn't noted before because most of the time, the result would be checked in a
-simple <code>if</code> statement.</p>
-<p>In other words <code>bool(None)</code> and <code>bool([])</code> return the same thing, which is <code>False</code>. The problem was
-happening because <em>another</em> branch still <em>thought</em> that the returned value was a <code>list</code> and so
-tried to <code>append</code> to it. As you might expect, the traceback wasn't pretty.</p>
-<p>I'm not saying that the person who originally wrote the code is a bad programmer. I'll leave that up to you. What
-I am saying is that python allows you to make such silly mistakes. This is especially problematic when you're working
-with really large code-bases.</p>
-<p>However, while this is all good in terms of development tools, this does not mean a large boost in performance. PyPy's
-FAQ talks about this issue and addresses some of the key concerns. <a class="footnote-reference" href="#pypyfaq" id="id5">[5]</a> In a nutshell, the performance will
-not increase simply because python's types are objects and do not correspond directly to how types are represented in
-binary. For example, python's <code>int</code> type isn't necessarily a 64-bit number, but has the ability to grow to whatever
-size you need it to grow.</p>
-<blockquote>
-<p>... annotations are at the wrong level (e.g. a PEP 484 “int” corresponds to Python 3’s int type, which does not
-necessarily fits inside one machine word; even worse, an “int” annotation allows arbitrary int subclasses).</p>
-<p><cite>PyPy FAQ (Would type annotations help PyPy’s performance?)</cite></p>
-</blockquote>
-</div>
-<div class="section" id="async-await">
-<h2><a class="toc-backref" href="#id7">Async/Await</a></h2>
-<blockquote>
-<p>This proposal makes coroutines a native Python language feature, and clearly separates them from generators. This
-removes generator/coroutine ambiguity, and makes it possible to reliably define coroutines without reliance on a
-specific library. This also enables linters and IDEs to improve static code analysis and refactoring.</p>
-<p><cite>PEP 0492</cite></p>
-</blockquote>
-<p><code>async</code> and <code>await</code> are very good ideas. In fact, these two keywords have been an integral part of C# for
-quite some time now and make programing with tasks much easier. These two key words makes python feel a lot more
-abstract, whereas turning generators into coroutines (even through the use of a decorator) and then using them like
-generators feels rather clumsy. In simple terms, <code>async</code> creates a coroutine for you. For example, the following
-is a coroutine:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-
-<span class="nd">@asyncio.coroutine</span>
-<span class="k">def</span> <span class="nf">display_date</span><span class="p">(</span><span class="n">loop</span><span class="p">):</span>
-    <span class="n">end_time</span> <span class="o">=</span> <span class="n">loop</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">+</span> <span class="mf">5.0</span>
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">loop</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">end_time</span><span class="p">:</span>
-            <span class="k">break</span>
-        <span class="k">yield from</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-<span class="c1"># Blocking call which returns when the display_date() coroutine is done</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">display_date</span><span class="p">(</span><span class="n">loop</span><span class="p">))</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-<p>The above will turn into the following under PEP-492:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-
-<span class="n">async</span> <span class="k">def</span> <span class="nf">display_date</span><span class="p">(</span><span class="n">loop</span><span class="p">):</span>
-    <span class="n">end_time</span> <span class="o">=</span> <span class="n">loop</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">+</span> <span class="mf">5.0</span>
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">loop</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">end_time</span><span class="p">:</span>
-            <span class="k">break</span>
-        <span class="n">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-<span class="c1"># Blocking call which returns when the display_date() coroutine is done</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">display_date</span><span class="p">(</span><span class="n">loop</span><span class="p">))</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-<p>However, what is being introduced is syntactic sugar meaning that this does not change python on a fundamental level.
-For example, introducing these native constructs will not <em>magically</em> make python be able to compete with node (V8).</p>
-</div>
-<div class="section" id="summary">
-<h2><a class="toc-backref" href="#id8">Summary</a></h2>
-<p>The new features being added are subtle but will go a long way into making Python 3 the abstract language that it needs
-to be as well as provide the tooling required to make it a potential choice for huge code-bases. However, this does
-not mean that Python has become a better choice over other languages such as golang for high performance applications.
-So, although these new features will definitely persuade people to move from Python 2 to Python 3 (at least for new
-projects), it does not necessarily mean that more and more people will leave Python seeking abstract yet high
-performance alternatives.</p>
-<hr class="docutils" />
-<table class="docutils footnote" frame="void" id="typechecker" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">PEP-0484</a>. This type checker is
-based on the <a class="reference external" href="http://mypy-lang.org/">mypy</a> type checker created by one of the authors of PEP-0484,
-Jukka Lehtosalo.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="async" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="https://www.python.org/dev/peps/pep-0492/">PEP-0492</a>. This is a pretty radical change since it means
-Python will get new key words.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="pycharm" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>PyCharm provides type checking through its <a class="reference external" href="https://github.com/JetBrains/python-skeletons">skeletons</a>.
-These are a lot like the stubs that PEP-0484 is proposing.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="dt" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td>DefinitelyTyped is a collection for stub files for a language called TypeScript which is basically a typed
-superset of JavaScript. These stub files help IDE and editors in providing better code completion.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="pypyfaq" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td>PyPy's FAQ talks about this issue, and its lack of effect on performance under
-&quot;<a class="reference external" href="http://pypy.readthedocs.org/en/latest/faq.html#would-type-annotations-help-pypy-s-performance">Would type annotations help PyPy’s performance?</a>&quot;.
-Look under the &quot;PEP-484 Type Hints&quot; sub section.</td></tr>
-</tbody>
-</table>
-</div>
-
-        </div>
-    </div>
-    <div class="post-meta"><span class="meta-type">Category: </span>
-            <span><a href="http://nafiulis.me/category/programming.html">Programming</a></span>
-        <span class="meta-type"> Tags: </span>
-            <span>
-                    <a href="http://nafiulis.me/tag/python.html">python</a>,                    <a href="http://nafiulis.me/tag/async-await.html">async-await</a>,                    <a href="http://nafiulis.me/tag/python3.html">python3</a>,                    <a href="http://nafiulis.me/tag/type-hints.html">type-hints</a>,                    <a href="http://nafiulis.me/tag/pep.html">pep</a>,                    <a href="http://nafiulis.me/tag/pep-484.html">pep-484</a>,                    <a href="http://nafiulis.me/tag/pep-492.html">pep-492</a>            </span>
-        </div>
-    <div id="disqus_thread" style="margin-top: 10px; margin-left: 20px; margin-right: 20px;"></div>
-    <script type="text/javascript">
+<span class=n>loop</span> <span class=o>=</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>get_event_loop</span><span class=p>()</span>
+<span class=c1># Blocking call which returns when the display_date() coroutine is done</span>
+<span class=n>loop</span><span class=o>.</span><span class=n>run_until_complete</span><span class=p>(</span><span class=n>display_date</span><span class=p>(</span><span class=n>loop</span><span class=p>))</span>
+<span class=n>loop</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
+</pre></div> <p>However, what is being introduced is syntactic sugar meaning that this does not change python on a fundamental level. For example, introducing these native constructs will not <em>magically</em> make python be able to compete with node (V8).</p> </div> <div class=section id=summary> <h2><a class=toc-backref href=#id8>Summary</a></h2> <p>The new features being added are subtle but will go a long way into making Python 3 the abstract language that it needs to be as well as provide the tooling required to make it a potential choice for huge code-bases. However, this does not mean that Python has become a better choice over other languages such as golang for high performance applications. So, although these new features will definitely persuade people to move from Python 2 to Python 3 (at least for new projects), it does not necessarily mean that more and more people will leave Python seeking abstract yet high performance alternatives.</p> <hr class=docutils> <table class="docutils footnote" frame=void id=typechecker rules=none> <colgroup><col class=label><col></colgroup> <tbody valign=top> <tr><td class=label><a class=fn-backref href=#id1>[1]</a></td><td><a class="reference external" href=https://www.python.org/dev/peps/pep-0484/ >PEP-0484</a>. This type checker is based on the <a class="reference external" href=http://mypy-lang.org/ >mypy</a> type checker created by one of the authors of PEP-0484, Jukka Lehtosalo.</td></tr> </tbody> </table> <table class="docutils footnote" frame=void id=async rules=none> <colgroup><col class=label><col></colgroup> <tbody valign=top> <tr><td class=label><a class=fn-backref href=#id2>[2]</a></td><td><a class="reference external" href=https://www.python.org/dev/peps/pep-0492/ >PEP-0492</a>. This is a pretty radical change since it means Python will get new key words.</td></tr> </tbody> </table> <table class="docutils footnote" frame=void id=pycharm rules=none> <colgroup><col class=label><col></colgroup> <tbody valign=top> <tr><td class=label><a class=fn-backref href=#id3>[3]</a></td><td>PyCharm provides type checking through its <a class="reference external" href=https://github.com/JetBrains/python-skeletons>skeletons</a>. These are a lot like the stubs that PEP-0484 is proposing.</td></tr> </tbody> </table> <table class="docutils footnote" frame=void id=dt rules=none> <colgroup><col class=label><col></colgroup> <tbody valign=top> <tr><td class=label><a class=fn-backref href=#id4>[4]</a></td><td>DefinitelyTyped is a collection for stub files for a language called TypeScript which is basically a typed superset of JavaScript. These stub files help IDE and editors in providing better code completion.</td></tr> </tbody> </table> <table class="docutils footnote" frame=void id=pypyfaq rules=none> <colgroup><col class=label><col></colgroup> <tbody valign=top> <tr><td class=label><a class=fn-backref href=#id5>[5]</a></td><td>PyPy's FAQ talks about this issue, and its lack of effect on performance under &quot;<a class="reference external" href=http://pypy.readthedocs.org/en/latest/faq.html#would-type-annotations-help-pypy-s-performance>Would type annotations help PyPy’s performance?</a>&quot;. Look under the &quot;PEP-484 Type Hints&quot; sub section.</td></tr> </tbody> </table> </div> </div> </div> <div class=post-meta><span class=meta-type>Category: </span> <span><a href=http://nafiulis.me/category/programming.html>Programming</a></span> <span class=meta-type> Tags: </span> <span> <a href=http://nafiulis.me/tag/python.html>python</a>, <a href=http://nafiulis.me/tag/async-await.html>async-await</a>, <a href=http://nafiulis.me/tag/python3.html>python3</a>, <a href=http://nafiulis.me/tag/type-hints.html>type-hints</a>, <a href=http://nafiulis.me/tag/pep.html>pep</a>, <a href=http://nafiulis.me/tag/pep-484.html>pep-484</a>, <a href=http://nafiulis.me/tag/pep-492.html>pep-492</a> </span> </div> <div id=disqus_thread style="margin-top: 10px; margin-left: 20px; margin-right: 20px;"></div> <script type=text/javascript>
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'nafiulisme'; // required: replace example with your forum shortname
 
@@ -244,20 +41,7 @@ Look under the &quot;PEP-484 Type Hints&quot; sub section.</td></tr>
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </div>
-
-        <!--Footer-->
-        <div id="footer">
-            <footer>
-                Code examples licenced under MIT License
-                <br/>
-                Copyright <i class="fa fa-copyright"></i> 2015 Quazi Nafiul Islam
-            </footer>
-        </div>
-    </div>
-        <script>
+    </script> <noscript>Please enable JavaScript to view the <a href=http://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript> </div> <!--Footer--> <div id=footer> <footer> Code examples licenced under MIT License <br> Copyright <i class="fa fa-copyright"></i> 2015 Quazi Nafiul Islam </footer> </div> </div> <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -265,6 +49,4 @@ Look under the &quot;PEP-484 Type Hints&quot; sub section.</td></tr>
 
           ga('create', 'UA-55554110-1', 'auto');
           ga('send', 'pageview');
-        </script>
-</body>
-</html>
+        </script> </body> </html>
