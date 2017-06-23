@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>
+            Testing out PyCharm's REST Client | EF
+    </title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="http://nafiulis.me/theme/css/main.css"/>
+            <link rel="stylesheet" href="http://nafiulis.me/theme/css/pygment.css"/>
+            <script src="http://nafiulis.me/theme/js/jquery.min.js"></script>
+            <script src="http://nafiulis.me/theme/js/main.js"></script>
+</head>
+<body>
+
+    <!--Heading at the top saying "Engineering Fantasy"-->
+    <div id="header_top">
+        <div class="title">
+            <a href="http://nafiulis.me"><span id="engineering">Engineering</span><span id="fantasy">Fantasy</span></a>
+        </div>
+    </div>
+
+    <button type="button" class="js-menu-trigger sliding-menu-button button-nav">
+        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/menu-white.png" alt="Menu Icon">
+    </button>
+
+
+    <!--Navigation Bar-->
+    <nav class="js-menu sliding-menu-content">
+        <span class="section-header">Pages</span>
+        <ul>
+
+            <li><a href="http://nafiulis.me">Home</a></li>
+            <li><a href="http://nafiulis.me/tags.html">Tags</a></li>
+                <li><a href="http://nafiulis.me/pages/about-me.html">About Me</a></li>
+        </ul>
+
+        <span class="section-header">Categories</span>
+        <ul>
+                <li><a href="http://nafiulis.me/category/anime.html">Anime</a></li>
+                <li><a href="http://nafiulis.me/category/education.html">Education</a></li>
+                <li><a href="http://nafiulis.me/category/productivity.html">Productivity</a></li>
+                <li><a href="http://nafiulis.me/category/programming.html">programming</a></li>
+                <li><a href="http://nafiulis.me/category/rants.html">rants</a></li>
+        </ul>
+    </nav>
+    <div class="js-menu-screen menu-screen"></div>
+
+    <!--Main Container-->
+    <div class="container">
+
+        <!--Top most menu-->
+            <div id="menu">
+                    <div class="left">
+                        <a href="http://nafiulis.me/feeds/all.atom.xml"><i class="fa fa-rss
+                        icon"></i></a>
+                        <a href="https://twitter.com/gamesbrainiac"><i class="fa fa-twitter icon"></i></a>
+
+                    </div>
+                    <div class="center">
+                        <h1 class="message">Nafiul Islam on casting spells with code</h1>
+                    </div>
+                    <div class="right">
+                        <a href="https://github.com/gamesbrainiac"><i class="fa fa-github icon"></i></a>
+
+                        <a href="http://stackoverflow.com/users/1624921/games-brainiac"><i class="fa fa-stack-overflow icon"
+                                                                  style="padding-right: 30px"></i></a>
+
+                    </div>
+            </div>
+
+        <!--Main blog list container-->
+        <div id="blogroll">
+    <div class="article-container">
+        <h1>Testing out PyCharm's REST Client</h1>
+        <p class="time">Thursday, 09 October 2014</p>
+        <div class="article-content">
+            <p>I've been trying out PyCharm's &quot;Test RESTful Web Service&quot; tool recently, just to check it out. I usually use
+<code>requests</code>, <code>httpie</code> or <code>curl</code> if I have to use command line tools, but the tool I use most is
+<a class="reference external" href="https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo">Advanced REST client</a>.</p>
+<p>Wanting to test out a sample API from <a class="reference external" href="http://flask-restful.readthedocs.org/en/latest/">Flask-Restful</a>,
+I decided to take PyCharm's tool out for a spin. Here is the sample code from their <a class="reference external" href="http://flask-restful.readthedocs.org/en/latest/quickstart.html">quickstart</a> page:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">flask.ext.restful</span> <span class="kn">import</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">Api</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="n">todos</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">class</span> <span class="nc">TodoSimple</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">todo_id</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">todo_id</span><span class="p">:</span> <span class="n">todos</span><span class="p">[</span><span class="n">todo_id</span><span class="p">]}</span>
+
+    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">todo_id</span><span class="p">):</span>
+        <span class="n">todos</span><span class="p">[</span><span class="n">todo_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">todo_id</span><span class="p">:</span> <span class="n">todos</span><span class="p">[</span><span class="n">todo_id</span><span class="p">]}</span>
+
+<span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">TodoSimple</span><span class="p">,</span> <span class="s1">&#39;/&lt;string:todo_id&gt;&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+<img alt="How to get to the REST client" class="align-center" src="images/pycharm_rest_04.png" />
+<p><code>GET</code> requests are easy enough. You don't need to change anything from the defaults:</p>
+<img alt="Click the button indicated by the orange arrow to turn off the query string" class="align-center" src="images/pycharm_rest_01.png" />
+<p>If you click the button indicated by the orange arrow, you will not have any query string in your URL. We will leave the
+request body empty:</p>
+<img alt="Keeping the request body empty" class="align-center" src="images/pycharm_rest_02.png" />
+<p>After sending the request:</p>
+<img alt="404 response" class="align-center" src="images/pycharm_rest_03.png" />
+<p>The client supports syntax highlighting for multiple formats, like <code>html</code>, <code>json</code> and <code>xml</code>. In
+this case, <code>html</code> has been highlighted. You can also check out response headers in the adjacent tab.</p>
+<p><code>PUT</code>, <code>POST</code> and <code>DELETE</code> are just as easy, but they do not have the defaults that you'd expect.
+For example, in <code>requests</code>, your content type is implicitly set for you to
+<code>application/x-www-form-urlencoded</code>:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">requests</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;http://127.0.0.1:5000/todo1&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;Make a tutorial on PyCharm</span><span class="se">\&#39;</span><span class="s1">s REST client&#39;</span> <span class="p">})</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">req</span>
+<span class="o">&lt;</span><span class="n">Response</span> <span class="p">[</span><span class="mi">200</span><span class="p">]</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">req</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span>
+<span class="s1">&#39;application/x-www-form-urlencoded&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">req</span><span class="o">.</span><span class="n">content</span>
+<span class="s1">&#39;{</span><span class="se">\n</span><span class="s1">    &quot;todo1&quot;: &quot;Make a tutorial on PyCharm</span><span class="se">\&#39;</span><span class="s1">s REST client&quot;</span><span class="se">\n</span><span class="s1">}</span><span class="se">\n</span><span class="s1">&#39;</span>
+</pre></div>
+<p>This took me some time to figure out in PyCharm's REST client. I <em>knew</em> I was doing something wrong,
+but oddly enough it took me a while before I understood that it was because I had not set my content type in my
+header. I think its because <code>curl</code>, <code>requests</code> and the chrome extension all set this implicitly for you.
+The good news is that headers have code completion, but but not for values:</p>
+<img alt="Setting content type" class="align-center" src="images/pycharm_rest_05.png" />
+<p>This time, we set the text to the following, since we want to add a new todo list item:</p>
+<img alt="Adding data to the request body" class="align-center" src="images/pycharm_rest_06.png" />
+<p>Voilà, our request succeeds:</p>
+<img alt="JSON request body" class="align-center" src="images/pycharm_rest_07.png" />
+<p>You can do a lot more with the options that are available, like uploading from files,
+adding request parameters and setting cookies.</p>
+<div class="section" id="references">
+<h2>References</h2>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.python-requests.org/en/latest/user/advanced/#request-and-response-objects">Python Requests -Request and ResponseObjects</a></li>
+<li><a class="reference external" href="http://stackoverflow.com/a/3121175/1624921">StackOverflow - How can I see the request headers made by curl when sending a request to the server?</a></li>
+</ul>
+</div>
+<div class="section" id="p-s">
+<h2>P.S.</h2>
+<p>This tool is also available in other jetbrains IDEs as well, like webstorm and intellij.</p>
+</div>
+
+        </div>
+    </div>
+    <div class="post-meta"><span class="meta-type">Category: </span>
+            <span><a href="http://nafiulis.me/category/programming.html">Programming</a></span>
+        <span class="meta-type"> Tags: </span>
+            <span>
+                    <a href="http://nafiulis.me/tag/rest.html">REST</a>,                    <a href="http://nafiulis.me/tag/pycharm.html">pycharm</a>,                    <a href="http://nafiulis.me/tag/jetbrains.html">jetbrains</a>,                    <a href="http://nafiulis.me/tag/intellij.html">intellij</a>            </span>
+        </div>
+    <div id="disqus_thread" style="margin-top: 10px; margin-left: 20px; margin-right: 20px;"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'nafiulisme'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+
+        <!--Footer-->
+        <div id="footer">
+            <footer>
+                Code examples licenced under MIT License
+                <br/>
+                Copyright <i class="fa fa-copyright"></i> 2015 Quazi Nafiul Islam
+            </footer>
+        </div>
+    </div>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-55554110-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+</body>
+</html>
