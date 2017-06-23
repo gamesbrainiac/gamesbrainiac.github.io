@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Engineering Fantasy</title><link href="http://nafiulis.me/" rel="alternate"></link><link href="http://nafiulis.me/feeds/productivity.atom.xml" rel="self"></link><id>http://nafiulis.me/</id><updated>2015-04-17T11:05:00+06:00</updated><entry><title>Productivity Tricks</title><link href="http://nafiulis.me/productivity-tricks.html" rel="alternate"></link><published>2015-04-17T11:05:00+06:00</published><updated>2015-04-17T11:05:00+06:00</updated><author><name>Nafiul Islam</name></author><id>tag:nafiulis.me,2015-04-17:productivity-tricks.html</id><summary type="html">&lt;div class="contents topic" id="table-of-contents"&gt;
+&lt;p class="topic-title first"&gt;Table of Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#measuring-productivity" id="id5"&gt;Measuring Productivity&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#the-checklist" id="id6"&gt;The Checklist&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#time-boxing" id="id7"&gt;Time-Boxing&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#pomodoro" id="id8"&gt;Pomodoro&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#planning" id="id9"&gt;Planning&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#don-t-work-everyday" id="id10"&gt;Don't Work Everyday&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#two-transition-days" id="id11"&gt;Two Transition Days&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#good-estimation" id="id12"&gt;Good Estimation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#will-power" id="id13"&gt;Will Power&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#peanuts" id="id14"&gt;Peanuts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#green-tea" id="id15"&gt;Green Tea&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#conclusion" id="id16"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;Productivity is an arbitrary metric that (tries to) measure how much work we get done per unit time. To some, it's not
+even a metric, but a feeling.
+For example, we could actually be doing a lot of work, but
+&lt;em&gt;feel&lt;/em&gt; as though we're doing nothing at all. On the other hand, we could actually be making a lot of &lt;em&gt;progress&lt;/em&gt; in
+one particular task and feel as though we've been highly productive. In this post, I will try to share a few tips
+and tricks that have boosted my own productivity in a holistic approach.&lt;/p&gt;
+&lt;div class="section" id="measuring-productivity"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id5"&gt;Measuring Productivity&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In order to &amp;quot;boost&amp;quot; productivity, we must define the standard by which we measure it.
+For most people (and initially for me), productivity
+is not &lt;em&gt;measured&lt;/em&gt; but rather &lt;em&gt;felt&lt;/em&gt;. The consequences of this is that we either feel productive or we don't. As such
+this &lt;em&gt;feeling&lt;/em&gt; is not very helpful in determining what we can do about it. So is there a better way? Short answer,
+yes. Long answer, &lt;em&gt;probably&lt;/em&gt;.&lt;/p&gt;
+&lt;div class="section" id="the-checklist"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id6"&gt;The Checklist&lt;/a&gt;&lt;/h3&gt;
+&lt;img alt="Image of a Checklist" class="align-center" src="/images/productivity_01.png" /&gt;
+&lt;p&gt;I'm pretty sure that we all have used or attempted to use a checklist at one point in our lives. Its a simple tool
+and it serves its purpose quite well. Simply planning out what you want to get out in the day can go a long
+way to boosting your productivity. Instead of having a seemingly infinite list of things, you have a &lt;em&gt;finite&lt;/em&gt; list of
+&lt;em&gt;known&lt;/em&gt; tasks that you need to get done. However this poses a very fundamental problem,
+&lt;em&gt;are all tasks created equal?&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="time-boxing"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id7"&gt;Time-Boxing&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Turns out, all tasks are not created equal. Some tasks can take half a day, and some tasks require only half an hour.
+Its not about how many tasks we complete, but rather how many hours we spend working productively that really
+matters. This is where &lt;em&gt;time-boxing&lt;/em&gt; comes into play. Time-Boxing is essentially allocating a fixed amount of time
+to work on a task or group of tasks. There are two advantages of doing this:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;You get a lower and upper limit of how much time you actually end up working in a day&lt;/li&gt;
+&lt;li&gt;You can &lt;em&gt;estimate&lt;/em&gt; what tasks are going to take longer, and therefore get a realistic picture of how much you can
+accomplish in a day.&lt;/li&gt;
+&lt;li&gt;It will allow you to break down large monolithic tasks into smaller sub-tasks and distribute the workload over days
+instead of trying to do everything in &lt;em&gt;one&lt;/em&gt; day and then failing miserably when that doesn't work out.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="pomodoro"&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="#id8"&gt;Pomodoro&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;The pomodoro is a unit of time, and is a &lt;em&gt;specific&lt;/em&gt; method of time-boxing. Here's how it works:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Get a task that you want to complete&lt;/li&gt;
+&lt;li&gt;Estimate the number of pomodori (plural of a pomodoro) it will take (A pomodoro is 25 minutes of time)&lt;/li&gt;
+&lt;li&gt;After each pomodoro, take a 5 to 10 minute break.&lt;/li&gt;
+&lt;li&gt;After four pomodori, take a longer break (usually 15 to 30 minutes)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now the above is the standard way of doing things. My own method is to assign 25 minutes to each pomodoro, take
+5-minute short breaks and take a longer break (30) minutes after &lt;em&gt;three&lt;/em&gt; pomodori. This way, I work 3/4th of the time
+in a 2-hour time slot. My&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="planning"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id9"&gt;Planning&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;Failing to plan is planning to fail.&lt;/dt&gt;
+&lt;dd&gt;&lt;cite&gt;Alan Lakein&lt;/cite&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Too much productivity is actually bad for you since you might end up &lt;em&gt;burning out&lt;/em&gt;.&lt;a class="footnote-reference" href="#burnout" id="id1"&gt;[1]&lt;/a&gt; Its better to
+prevent burnout than trying to cure it and the best prevention tool at our disposal is planning. The plan does not
+have to be overly elaborate, but rather makes sure that there are breaks in your work schedule. When it comes
+to planning, I have a few basic rules.&lt;/p&gt;
+&lt;div class="section" id="don-t-work-everyday"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id10"&gt;Don't Work Everyday&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;There should be one day of the week where you just sit back, relax and read an interesting book or watch a movie. I
+take a break on Friday, and so throughout the week, if there's something that I wanted to do or something that I wanted
+to watch, I add that to my &amp;quot;Friday list&amp;quot;. What this basically means is that I end up watching tons of movies and
+finishing blog posts on a Friday.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="two-transition-days"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id11"&gt;Two Transition Days&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I have two transition days, one before and one after Friday. On a transition day, I do 40% less work than I do on a
+regular day. On a normal day, I end up doing around 12 pomodori. On a transition day, I work 8 pomodori. This way,
+there's less anxiety when it comes to getting back to work after a Friday.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="good-estimation"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id12"&gt;Good Estimation&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Being able to estimate how long something will take is key to making sure that you don't end up with too little or
+too much in a day. I try to get this right by making sure that I've broken down a task to atomic levels. So for example,
+if I have a chapter to write, I'm going to break that chapter down to the features or skills that I want to teach. I
+further breakdown the features or skills into sub-sections, like why a feature is useful, how to use the feature
+and gotchas to watch out for. Most tasks can be broken down into pretty small bits that are easier to estimate.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="will-power"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id13"&gt;Will Power&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Motivation is heavily talked about, and everyone has their own way of motivating themselves. However, I've picked up
+a few unconventional tips over the years. A lot of these tips come from some of the books and blog posts I've read.
+The most prominent of these is &lt;a class="reference external" href="http://goo.gl/Zg9gC6"&gt;&amp;quot;The Will Power Instinct&amp;quot;&lt;/a&gt; by Kelly McGonigal. I highly
+recommend it as a read, but here are a couple of things that I found very useful.&lt;/p&gt;
+&lt;div class="section" id="peanuts"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id14"&gt;Peanuts&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Have a small bag of peanuts with you on your desk, enough to last you 2 hours and eat them sparingly. As you finish
+mini tasks within the task,&lt;a class="footnote-reference" href="#minitask" id="id2"&gt;[2]&lt;/a&gt; reward yourself with a peanut. The rationale behind this is that, our brains
+need a steady stream of energy to keep working. Peanuts are ideal since they're small, and provide enough energy. Sugar
+is not a viable solution since it provides &lt;em&gt;too much&lt;/em&gt; energy.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="green-tea"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id15"&gt;Green Tea&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Green Tea helps me concentrate better. Apparently, there's a bit of science backing this too.&lt;a class="footnote-reference" href="#green" id="id3"&gt;[3]&lt;/a&gt; I generally
+tend to drink green tea in my long breaks (basically once every two hours). Green tea is great because although it
+&lt;em&gt;does&lt;/em&gt; have caffeine, the content is quite low.&lt;a class="footnote-reference" href="#caffene" id="id4"&gt;[4]&lt;/a&gt;
+This means that you won't have to worry about sleep if you drink green tea at night.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conclusion"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id16"&gt;Conclusion&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;There are plenty of ways to stay productive, but these are the ones I find most useful. I've read a lot about
+productivity over the years, but the pomodoro, and Green Tea are probably the best tools at my disposal.&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;table class="docutils footnote" frame="void" id="burnout" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Burnout is when we lose interest in the work that we do. This can have terrible consequences and is
+frequently talked about. &lt;a class="reference external" href="http://goo.gl/bvsQ3P"&gt;Forbes article on burnout&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="minitask" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;When I write, I reward myself after every paragraph. In code, I reward myself when I finish writing
+a function or method.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="green" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id3"&gt;[3]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="http://alifeofproductivity.com/9-brain-foods-that-will-boost-your-ability-to-focus/"&gt;http://alifeofproductivity.com/9-brain-foods-that-will-boost-your-ability-to-focus/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="caffene" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id4"&gt;[4]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="http://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/caffeine/art-20049372"&gt;http://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/caffeine/art-20049372&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</summary><category term="productivity"></category><category term="pomodoro"></category><category term="time-boxing"></category><category term="willpower"></category><category term="motivation"></category></entry><entry><title>A note about Twitter</title><link href="http://nafiulis.me/a-note-about-twitter.html" rel="alternate"></link><published>2014-07-11T17:54:00+06:00</published><updated>2014-07-11T17:54:00+06:00</updated><author><name>Nafiul Islam</name></author><id>tag:nafiulis.me,2014-07-11:a-note-about-twitter.html</id><summary type="html">&lt;div class="contents topic" id="table-of-contents"&gt;
+&lt;p class="topic-title first"&gt;Table of Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#a-few-points" id="id1"&gt;A few points&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#the-pulse" id="id2"&gt;The Pulse&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#trends" id="id3"&gt;Trends&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#getting-help" id="id4"&gt;Getting Help&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#hashtags" id="id5"&gt;Hashtags&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;So, I've been using Twitter for some time now. I think its rather useful, especially if you understand how it can
+benefit you.&lt;/p&gt;
+&lt;div class="section" id="a-few-points"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;A few points&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I think, if you want to take full advantage of twitter for learning and networking,
+there are a few things you need to know:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Twitter is a tool. Its neither the solution to all your problems nor the end of humanity as we know it.&lt;/li&gt;
+&lt;li&gt;Don't care about global trends, care about relevant ones.&lt;/li&gt;
+&lt;li&gt;Spending time on it is good, even if its about a few hours a day, just make sure that you're getting useful
+information out of it.&lt;/li&gt;
+&lt;li&gt;Don't get dogmatic about following people. Follow anyone and everyone that is relevant to what you're learning.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-pulse"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;The Pulse&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;One of the first things I did when I started using Twitter is that I started following the people relevant to what I
+was learning. In the Python community, there are plenty of people who are relevant like &lt;em&gt;Guido Van Rossum&lt;/em&gt; or &lt;em&gt;Alex
+Martelli&lt;/em&gt;. What's more important is &lt;em&gt;these&lt;/em&gt; people also followed people who were relevant in their own communities.
+So, I started learning about guys like &lt;em&gt;Raymond Hettinger&lt;/em&gt; and &lt;em&gt;Donald Stufft&lt;/em&gt;. So by following &lt;em&gt;Raymond Hettinger&lt;/em&gt; I
+knew about &lt;em&gt;Wesley Chun&lt;/em&gt;, who wrote &amp;quot;Core Python Applications&amp;quot;, a book that I never knew about before.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="trends"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;Trends&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The reason I'm talking about all of this is that Twitter can be an excellent tool when it comes to understanding and
+exploring a community, as well as the hierarchy of the community. But there's more.&lt;/p&gt;
+&lt;p&gt;If you know all the hotshots of a community, it doesn't take much to realize that their collective voice is pretty
+much the pulse of the community and that tells you about how its doing. Recently, there have been a lot of people in
+the python community avidly following the happenings in the go community as well. Top programmers have started
+following Rob Pike and go specific twitter accounts.&lt;/p&gt;
+&lt;p&gt;So, that tells you something. Golang is going places.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="getting-help"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;Getting Help&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;People respond more willingly on twitter. It takes very little effort (compared to an email) to send a tweet. Its
+short and sweet, so if you want help with something, ask on Twitter.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hashtags"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id5"&gt;Hashtags&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Don't abuse them. People will start blocking and ignoring all the crap you're talking about. Make connections,
+and do so earnestly; don't waste other people's time and screen real-estate.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="twitter"></category><category term="learning"></category></entry><entry><title>Being Productive while sick</title><link href="http://nafiulis.me/being-productive-while-sick.html" rel="alternate"></link><published>2014-05-03T16:49:00+06:00</published><updated>2014-05-03T16:49:00+06:00</updated><author><name>Nafiul Islam</name></author><id>tag:nafiulis.me,2014-05-03:being-productive-while-sick.html</id><summary type="html">&lt;p&gt;I hate being sick. I'm pretty sure you do too, but it wasn't always like this. When I was seven,
+I used to take super cold showers at the dead of night so that I'd get sick (and bunk!). Even if I didn't I'd do my
+best to act convincingly enough.&lt;/p&gt;
+&lt;p&gt;But now nearing 20, I find that being sick is probably the worst thing that can happen to me. I have a ton of work to
+do and more work keeps being added to be ever growing backlog. So, this time I forced myself to do at least some of
+work that I was capable of doing.&lt;/p&gt;
+&lt;div class="section" id="getting-in-touch-with-old-friends"&gt;
+&lt;h2&gt;Getting in touch with old friends&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;Make new friends, but keep the old. One is silver and the other's gold&lt;/dt&gt;
+&lt;dd&gt;-- Some Wise Person&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I often do this, but as of late I've been doing it very infrequently (tons of work). But over the last few days,
+I've gotten in touch with some of the people who've helped me a lot, and some people I used to be very close with. A
+simple call doesn't take much time or effort, and stuff like this is always somewhere on my backlog. The funny thing
+is, a lot of people were genuinely concerned about how I was doing. Maybe you think its not much, but a gentle &amp;quot;Hey,
+hows it goin'?&amp;quot; can often make someone's day a lot brighter.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="audio-books"&gt;
+&lt;h2&gt;Audio Books&lt;/h2&gt;
+&lt;p&gt;I had trouble reading or looking at a screen for that matter; my head started aching (its aching right now). So,
+I just closed my eyes and listened to a couple of audio books. This was great, since I managed to learn a lot of
+stuff while laying down in bed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="planning"&gt;
+&lt;h2&gt;Planning&lt;/h2&gt;
+&lt;p&gt;I made tons of lists about the things I wanted to do and then sorted my list with regard to priority. Now,
+as soon as my head stops aching I can get back to work with a clear idea of what needs to be done.&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;I'm still recovering, but I thought I write this down so that I can take a look back at what this when I need to.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="life"></category><category term="sickness"></category><category term="productivity"></category></entry></feed>
