@@ -1,5 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Engineering Fantasy</title><link href="http://nafiulis.me/" rel="alternate"></link><link href="http://nafiulis.me/feeds/programming.atom.xml" rel="self"></link><id>http://nafiulis.me/</id><updated>2017-06-23T16:53:00+06:00</updated><entry><title>GraphQL in the Python World</title><link href="http://nafiulis.me/graphql-in-the-python-world.html" rel="alternate"></link><published>2017-06-23T16:53:00+06:00</published><updated>2017-06-23T16:53:00+06:00</updated><author><name>Nafiul Islam</name></author><id>tag:nafiulis.me,2017-06-23:graphql-in-the-python-world.html</id><summary type="html">&lt;div class="contents topic" id="table-of-contents"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Engineering Fantasy</title><link href="http://nafiulis.me/" rel="alternate"></link><link href="http://nafiulis.me/feeds/programming.atom.xml" rel="self"></link><id>http://nafiulis.me/</id><updated>2018-02-03T21:41:00+06:00</updated><entry><title>What Heroku Should Do</title><link href="http://nafiulis.me/what-Heroku-should-do.html" rel="alternate"></link><published>2018-02-03T21:41:00+06:00</published><updated>2018-02-03T21:41:00+06:00</updated><author><name>Nafiul Islam</name></author><id>tag:nafiulis.me,2018-02-03:what-Heroku-should-do.html</id><summary type="html">&lt;p&gt;&lt;em&gt;DISCLAIMER: THESE OPINIONS ARE MY OWN AND DO NOT REFLECT THE OPINIONS OF MY FORMER OR PRESENT EMPLOYERS&lt;/em&gt;&lt;/p&gt;
+&lt;div class="contents topic" id="table-of-contents"&gt;
+&lt;p class="topic-title first"&gt;Table of Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#heroku-connect" id="id1"&gt;Heroku Connect&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#heterogeneous-syncing-types" id="id2"&gt;Heterogeneous Syncing Types&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#pay-per-row" id="id3"&gt;Pay per Row&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#underpowered-dynos" id="id4"&gt;Underpowered Dynos&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#deploy-anywhere-but" id="id5"&gt;Deploy Anywhere (but...)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#heroku-is-an-ecosystem" id="id6"&gt;Heroku is an Ecosystem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#what-heroku-is-doing-right" id="id7"&gt;What Heroku is Doing Right&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;I've been using Heroku for a while not at my workplace and so have many of our developers. Heroku is actually a really
+good idea, and thats why services like convox.io and platform.sh keep popping up. The notion, that you can have
+your servers managed by people, and not need a full time devops team is a total godsend. Iterations are faster and
+easier, and it allows our teams to focus on application logic. It is not without its set of caveats though.
+The market place also makes for quick integrations with other service providers, which makes adding things like cache
+and search very easy.&lt;/p&gt;
+&lt;p&gt;I myself was pretty skeptical at the beginning because although for my personal projects, my perception of Heroku
+was that it was pretty expensive, and not something that you'd want to use at a &lt;em&gt;real&lt;/em&gt; company. By the time I joined,
+Heroku was already being used for several applications. I mean, at the time, I just thought it was a nice skin on top
+of AWS (which is an accurate description even to present day).&lt;/p&gt;
+&lt;p&gt;However, the real reason that the company was using Heroku was because of a product called &lt;em&gt;Heroku Connect&lt;/em&gt; (HC).&lt;/p&gt;
+&lt;div class="section" id="heroku-connect"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;Heroku Connect&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Heroku Connect is basically a syncing tool. It basically syncs data from SalesForce (SF) to a Heroku operated Postgresql
+database. The data in SalesForce (SF) was coming from the company's own servers. In other words, we were paying Heroku
+to gain access to out own data. This initially perplexed me, but I soon found out is that the old platform had issues
+scaling data access out, so we decided to use HC and Postgresql as a temporary solution to create a couple of
+applications that we could use to test new products and new markets. SF does have an API, but that has API limits
+for reads and writes, and is generally used for bulk updates and reads. Furthermore, it gets quite slow if you're
+building an API on top of it. However, we soon ran into a couple of issues very quickly. HC in conjunction with
+Postgresql was seen as a really good alternative, because it allowed you to bypass data access limit by essentially
+creating a copy of your business data in Postgresql.&lt;/p&gt;
+&lt;p&gt;However, we soon ran into a couple of issues really quickly.&lt;/p&gt;
+&lt;div class="section" id="heterogeneous-syncing-types"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id2"&gt;Heterogeneous Syncing Types&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In SF, data is stored within things called SalesForce Objects (SO). These SOs are basically tables, and through HC are
+mapped to Postgresql tables. There are two ways in which syncs occur. One is that there is a set interval after which
+the data from SF is synced to Postgresql and the changes with Postgresql are synced to SalesForce. The other way is that
+data is synced in real time. What is perplexing is that you never know which SOs are eligible for real time updates
+and which ones will only be updated at intervals. You can always see which objects are being updated at intervals,
+and which ones are being updated in real time, but you never know &lt;em&gt;why&lt;/em&gt; a particular SO gets real time updates while
+another SO gets updates at intervals. Sometimes, SOs that had real time updates will start getting interval updates
+instead. This is because you might hit what is called the &amp;quot;Streaming API limit&amp;quot;. What this limit is, and how it is
+reached remains a mystery to me as well as our SF developers.&lt;/p&gt;
+&lt;p&gt;If you're building a service that gives you quick and unlimited access to SF, then you better deliver on that promise
+otherwise, people will become disillusioned by your service as a whole and so despite have some awesome product,
+your reputation is going to suffer as a natural consequence.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pay-per-row"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id3"&gt;Pay per Row&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;If you want to use HC, you have to pay an amount for a particular number of rows. So basically, you are paying for
+the data in SF, you are paying for the data in Postgresql, and on top of that you have to pay per row to use HC. This
+is maddening because it makes so little sense. If you're building a syncing service, you should be charging for
+throughput, and not for the amount of data. This also makes sense because the higher the throughput, the higher the
+costs for Heroku as a business, so it'd make sense for both Heroku and the companies buying the HC service.&lt;/p&gt;
+&lt;p&gt;But the real consequence of this pricing scheme is that if you want to launch a geo-distributed application built on
+top of HC, you need to pay for rows in &lt;em&gt;each&lt;/em&gt; region because Heroku's postgres does not have multi-master replication,
+only master-slave replication. So, if you had to pay for regions in the US, EU and China, then you'd need to pay
+for the same number of rows &lt;em&gt;three&lt;/em&gt; times.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="underpowered-dynos"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;Underpowered Dynos&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Dynos are basic units of computation for Heroku. In a generic sense, they are a virtual machine.&lt;/p&gt;
+&lt;p&gt;The lowest tier dyno is really quite pathetic. Its just 512 MBs of RAM and 1 GHz, and for the equivalent price,
+you could get a &lt;em&gt;few&lt;/em&gt; t2.mirco instances from AWS and I'm pretty sure that you could get the same from Azure and
+Google Cloud Platform. Although you get auto-scaling as well as maintenance on those VMs, the price seems quite steep
+for the kind of product that they're offering.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="deploy-anywhere-but"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id5"&gt;Deploy Anywhere (but...)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can &lt;em&gt;theoretically&lt;/em&gt; deploy on pretty much any continent using Heroku. However, there are two Herokus. There is the
+public cloud, and then there is the private cloud. If this is news to you, then what you've been using all this time
+is Heroku's public cloud. The public cloud only has a few regions, whereas the private cloud has many regions from
+Virginia to Tokyo.&lt;/p&gt;
+&lt;p&gt;However, the two clouds have a completely different payment scheme. To just be able to &lt;em&gt;use&lt;/em&gt; the
+private cloud you need to pay a certain amount every month, just for the privilege of being able to use it. You're
+not getting any dynos or anything. Just to be able to use the private cloud, you need to pay an amount upfront, and its
+not cheap either. Furthermore, the dynos in the private cloud are more expensive (yes, they have a little more
+compute power), which makes geo-distribution of your applications quite expensive.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="heroku-is-an-ecosystem"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id6"&gt;Heroku is an Ecosystem&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In Heroku the &lt;em&gt;app&lt;/em&gt; is the center of the universe. You &lt;em&gt;attach&lt;/em&gt; add-ons like redis or Postgresql to your application.
+You can indeed &lt;em&gt;share&lt;/em&gt; add-ons between applications, but later on, it becomes difficult to monitor what add-on is owned
+by what app. It is far better if you have an interface, where you have the add-ons separate to the applications, so
+that you can share resources between applications more easily.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-heroku-is-doing-right"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id7"&gt;What Heroku is Doing Right&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Heroku has probably the best service you can get. If something breaks or something goes wrong with your application,
+their support mechanism is truly exceptional, because they will ping up an on-call engineer to fix your production
+problems. Usually, these issues are resolved very quickly.&lt;/p&gt;
+&lt;p&gt;Secondly, even if you consider that Heroku is expensive, having your own devops team is even more expensive, and
+further still if you need them to be on-call. This is difficult for small companies.&lt;/p&gt;
+&lt;p&gt;Furthermore, Heroku also has some of the best account executives you can get. They are really quite helpful,
+and truly fight for you with upper management to give you the best deals possible if you buy bulk plans. I've only
+worked with two so far, but they really are fighting for you in the company, and what to see you succeed.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Heroku"></category><category term="web"></category><category term="saas"></category></entry><entry><title>GraphQL in the Python World</title><link href="http://nafiulis.me/graphql-in-the-python-world.html" rel="alternate"></link><published>2017-06-23T16:53:00+06:00</published><updated>2017-06-23T16:53:00+06:00</updated><author><name>Nafiul Islam</name></author><id>tag:nafiulis.me,2017-06-23:graphql-in-the-python-world.html</id><summary type="html">&lt;div class="contents topic" id="table-of-contents"&gt;
 &lt;p class="topic-title first"&gt;Table of Contents&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#getting-started" id="id2"&gt;Getting Started&lt;/a&gt;&lt;ul&gt;
